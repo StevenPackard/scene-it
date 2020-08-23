@@ -19,6 +19,18 @@ namespace scene_it.Controllers
       _ps = ps;
     }
 
+    [HttpGet]
+    public ActionResult<IEnumerable<Post>> Get()
+    {
+      try
+      {
+        return Ok(_ps.Get());
+      }
+      catch (Exception error)
+      {
+        return BadRequest(error.Message);
+      }
+    }
 
 
 
